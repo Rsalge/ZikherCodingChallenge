@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { connect } from "react-redux";
+import { fetchSongs } from "../actions";
 class Search extends Component {
   constructor() {
     super();
@@ -31,4 +32,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default connect(null, { fetchSongs })(Search);
