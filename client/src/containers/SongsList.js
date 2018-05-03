@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Song from "../components/Song";
 
 class SongsList extends Component {
   render() {
     console.log("SONGS RETURNED FROM API", this.props.songs);
-    return <div>This is the SongList component</div>;
+    return (
+      <div>
+        <h1>This is the SongList component</h1>
+        {this.props.songs.map(song => <Song song={song} />)}
+      </div>
+    );
   }
 }
 

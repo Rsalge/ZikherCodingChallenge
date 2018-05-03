@@ -8,6 +8,7 @@ import reducers from "./reducers";
 import promise from "redux-promise";
 import Homepage from "./components/HomePage";
 import Search from "./components/Search";
+import Header from "./components/Header";
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -15,8 +16,11 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <div>
-        <Search />
-        <Route path="/" component={Homepage} />
+        <Header />
+        <Switch>
+          <Route path="/" component={Homepage} />
+          <Route path="/search" component={Search} />
+        </Switch>
       </div>
     </BrowserRouter>
   </Provider>,
