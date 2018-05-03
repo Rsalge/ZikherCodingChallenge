@@ -3,7 +3,7 @@ const axios = require("axios");
 router.get("/songs", (req, res) => {
   console.log("INSIDE OF /songs ENPOINT: ", req.query.query);
   let token =
-    "BQARODvbhXF1o8f5EeZ_uKA-5qOK1UN4kW5tbIhfADKi1wVHRe-IIIsFvEeDWb9Flg5KyJTxtoSfgpwfPqm9f4p1L49cSpCXUb4Rwgt_w326vE2PRH1GSp0JTXWi4MHXgBf1qe3gPrHMc9V9lYb4Vcu3wstcYWDQnua5iC97LS6-X2Ru2G4k8uME-gFr1DFNwYrrbfmzYd69TCzNwxx9Zm6AuFehOa2h4_br14b-Mlkt2IEvbIV3wBlmPmuPmhUm7-WCMvA";
+    "BQCQAQHZmPGRPempVBzmUJiNoeiKGm-WdfnB9I5DGOVXeQDmxXydWGV8O8o516bvKdIXuNoUl7jziZ_qIBe0rw0DzWlONglZ5m37pZIS4VMs_HzKcwMBuXPTBqCgXoiRfVc0t4VR5geAQUUr63lO5iCMcpH5aCEgvV1pI71PfxVHqGU1MuCHlNyKWQT6-j4QjKWtVEy4hLn6SEWY-4-NSJGAveToDgAc3ctfY0-jwZSOFDzD2716wvtn9UCuVpTjZmZZt3I";
   axios({
     method: "GET",
     url:

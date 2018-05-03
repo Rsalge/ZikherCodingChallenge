@@ -2,7 +2,11 @@ import React from "react";
 
 const Song = props => {
   console.log("INSIDE SONG COMPONENT: ", props);
-  return <div>{props.song.name}</div>;
+  return (
+    <tr>
+      <div>{props.song.name}</div>
+    </tr>
+  );
 };
 
 export default Song;
