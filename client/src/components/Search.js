@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchSongs } from "../actions";
-import SongsList from "../containers/SongsList";
+import SongsTable from "../containers/SongsTable";
 class Search extends Component {
   constructor() {
     super();
@@ -30,7 +30,7 @@ class Search extends Component {
           />
           <button>Search</button>
         </form>
-        <SongsList />
+        <SongsTable />
       </div>
     );
   }

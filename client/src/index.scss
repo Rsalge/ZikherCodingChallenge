@@ -37,6 +37,11 @@ body {
 }
 
 .table {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100vw;
 }
 
 .tableHeaders {
