@@ -6,17 +6,26 @@ class Search extends Component {
     this.state = {
       query: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(this.state.query);
   }
 
   render() {
     return (
       <div>
-        <input
-          type="text"
-          placeholder="Search for a song"
-          onChange={e => this.setState({ query: e.target.value })}
-          value={this.state.query}
-        />
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            placeholder="Search for a song"
+            onChange={e => this.setState({ query: e.target.value })}
+            value={this.state.query}
+          />
+          <button>Search</button>
+        </form>
       </div>
     );
   }
