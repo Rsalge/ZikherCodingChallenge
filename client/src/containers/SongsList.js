@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 class SongsList extends Component {
   render() {
+    console.log("SONGS RETURNED FROM API", this.props.songs);
     return <div>This is the SongList component</div>;
   }
 }
