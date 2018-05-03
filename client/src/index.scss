@@ -35,3 +35,15 @@ body {
   align-content: center;
   padding: 10px;
 }
+
+.table {
+}
+
+.tableHeaders {
+  border: 1px black solid;
+  display: flex;
+  flex: 1 1 auto;
+  width: 60vw;
+  align-content: space-between;
+  justify-content: space-between;
+}
