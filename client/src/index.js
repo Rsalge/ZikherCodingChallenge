@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import promise from "redux-promise";
 import reducers from "./reducers";
+import promise from "redux-promise";
 import Homepage from "./components/HomePage";
+import Search from "./components/Search";
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
