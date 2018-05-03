@@ -18,8 +18,8 @@ ReactDOM.render(
       <div>
         <Header />
         <Switch>
-          <Route path="/" component={Homepage} />
           <Route path="/search" component={Search} />
+          <Route path="/" component={Homepage} />
         </Switch>
       </div>
     </BrowserRouter>
