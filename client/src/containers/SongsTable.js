@@ -15,7 +15,7 @@ class Table extends Component {
       <div className="table">
         <TableHeader headers={headers} />
         <TableBody />
-        <TableFooter footers={headers} />
+        <TableHeader headers={headers} />
       </div>
     );
   }
