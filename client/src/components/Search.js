@@ -13,7 +13,6 @@ class Search extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state.query);
     this.props.fetchSongs(this.state.query);
     this.setState({ query: "" });
   }

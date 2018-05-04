@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import TableHeader from "../components/TableHeader";
 import TableBody from "../components/TableBody";
-import TableFooter from "../components/TableFooter";
 
 class Table extends Component {
   render() {

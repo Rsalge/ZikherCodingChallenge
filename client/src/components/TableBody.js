@@ -3,9 +3,13 @@ import { connect } from "react-redux";
 import TableRow from "./TableRow";
 class TableBody extends Component {
   render() {
-    console.log("SONG DATA: ", this.props.songs);
-    if (!this.props.songs.data.length === 0)
-      return <div>Loading songs, please wait.</div>;
+    if (this.props.songs.data.length === 0) {
+      return (
+        <div className="message">
+          Search for a song above and your results will be displayed here!
+        </div>
+      );
+    }
     return (
       <div className="tableBody">
         {this.props.songs.data.map(song => {
