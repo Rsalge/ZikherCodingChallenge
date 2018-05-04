@@ -12,7 +12,6 @@ class TableHeaders extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(title) {
-    console.log("sorted value:", this.state[title]);
     this.props.sortSongs({ title, sorted: this.state[title] });
     if (title === "Title") {
       this.setState({

@@ -3,7 +3,6 @@ import { GET_SONGS, SORT_SONGS } from "../actions";
 export default function(state = { error: null, data: [] }, action) {
   switch (action.type) {
     case GET_SONGS:
-      console.log("SONGS DATA: ", action.payload);
       if (action.payload instanceof Error) {
         return {
           ...state,
@@ -14,7 +13,6 @@ export default function(state = { error: null, data: [] }, action) {
     case SORT_SONGS:
       let newState = Object.assign({}, state);
       let title = action.payload.title;
-      console.log("NEW STATE:", newState);
       if (title === "Title") {
         if (action.payload.sorted) {
           newState.data.reverse();
