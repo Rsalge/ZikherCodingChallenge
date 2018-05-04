@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const axios = require("axios");
+
+let token = "test";
+
 router.get("/songs", (req, res) => {
   console.log("INSIDE OF /songs ENPOINT: ", req.query.query);
-  let token =
-    "BQCQAQHZmPGRPempVBzmUJiNoeiKGm-WdfnB9I5DGOVXeQDmxXydWGV8O8o516bvKdIXuNoUl7jziZ_qIBe0rw0DzWlONglZ5m37pZIS4VMs_HzKcwMBuXPTBqCgXoiRfVc0t4VR5geAQUUr63lO5iCMcpH5aCEgvV1pI71PfxVHqGU1MuCHlNyKWQT6-j4QjKWtVEy4hLn6SEWY-4-NSJGAveToDgAc3ctfY0-jwZSOFDzD2716wvtn9UCuVpTjZmZZt3I";
   axios({
     method: "GET",
     url:
@@ -19,21 +20,15 @@ router.get("/songs", (req, res) => {
       res.send(success.data);
     })
     .catch(err => {
-      console.error(err);
-      res.sendStatus(500);
+      console.error("FAILED TO FETCH SONGS");
+      res.sendStatus(401);
     });
-  // res.send([
-  //   { title: "We Will Rock You" },
-  //   { title: "Don't Stop Belivin'" },
-  //   { title: "Under The Bridge" },
-  //   { title: "Moonlight Sonata" }
-  // ]);
 });
 
-router.get("/hello", (req, res) => {
-  res.send({
-    name: "World"
-  });
+router.post("/token", (req, res) => {
+  console.log("INSIDE TOKEN ROUTE:", req.body);
+  token = req.body.token;
+  res.send("token received");
 });
 
 module.exports = router;

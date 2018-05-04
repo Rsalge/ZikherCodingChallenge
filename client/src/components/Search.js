@@ -30,10 +30,18 @@ class Search extends Component {
           />
           <button>Search</button>
         </form>
+        <p className="error">{this.props.songs.error}</p>
+
         <SongsTable />
       </div>
     );
   }
 }
 
-export default connect(null, { fetchSongs })(Search);
+function mapStateToProps(state) {
+  return {
+    songs: state.songs
+  };
+}
+
+export default connect(mapStateToProps, { fetchSongs })(Search);

@@ -6,13 +6,17 @@ class Homepage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      token: ""
+      token: "",
+      err: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleSubmit(e) {
     e.preventDefault();
-    axios.post("/api/token", { token: this.state.token });
+    axios
+      .post("/api/token", { token: this.state.token })
+      .then(() => this.setState({ token: "", err: null }))
+      .catch(err => this.setState(err));
   }
   render() {
     return (
@@ -25,6 +29,7 @@ class Homepage extends Component {
           />
           <button type="submit">Submit</button>
         </form>
+        {this.state.err}
         <TokenDirections />
       </div>
     );
