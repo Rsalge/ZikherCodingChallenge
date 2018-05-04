@@ -65,6 +65,15 @@ body {
   justify-content: space-between;
 }
 
+.tableFooters {
+  border: 1px black solid;
+  display: flex;
+  flex: 1 1 auto;
+  width: 60vw;
+  align-content: space-between;
+  justify-content: space-between;
+}
+
 .search {
   display: flex;
   flex-direction: column;
