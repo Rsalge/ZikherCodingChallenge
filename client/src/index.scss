@@ -164,3 +164,15 @@ a:hover {
   background-color: #575159;
   padding: $padding;
 }
+
+.instructions {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.instructions > img {
+  max-width: 40px;
+  max-height: 40px;
+}
