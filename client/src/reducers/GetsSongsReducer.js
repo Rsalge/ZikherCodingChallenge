@@ -13,11 +13,11 @@ export default function(state = { error: null, data: [] }, action) {
       return { data: action.payload.data.tracks.items, error: null };
     case SORT_SONGS:
       let newState = Object.assign({}, state);
+      let title = action.payload.title;
       console.log("NEW STATE:", newState);
-      if (action.payload === "Title") {
-        console.log("title clicked");
+      if (title === "Title") {
         if (action.payload.sorted) {
-          console.log("already sorted");
+          newState.data.reverse();
         } else {
           newState.data.sort(function(a, b) {
             var textA = a.name.toUpperCase();
@@ -25,10 +25,26 @@ export default function(state = { error: null, data: [] }, action) {
             return textA < textB ? -1 : textA > textB ? 1 : 0;
           });
         }
-      } else if (action.payload === "Artist") {
-        console.log("artist clicked");
-      } else if (action.payload === "Album") {
-        console.log("album clicked");
+      } else if (title === "Artist") {
+        if (action.payload.sorted) {
+          newState.data.reverse();
+        } else {
+          newState.data.sort(function(a, b) {
+            var textA = a.artists[0].name.toUpperCase();
+            var textB = b.artists[0].name.toUpperCase();
+            return textA < textB ? -1 : textA > textB ? 1 : 0;
+          });
+        }
+      } else if (title === "Album") {
+        if (action.payload.sorted) {
+          newState.data.reverse();
+        } else {
+          newState.data.sort(function(a, b) {
+            var textA = a.album.name.toUpperCase();
+            var textB = b.album.name.toUpperCase();
+            return textA < textB ? -1 : textA > textB ? 1 : 0;
+          });
+        }
       }
       return newState;
     default:
