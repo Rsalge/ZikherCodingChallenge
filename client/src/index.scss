@@ -53,25 +53,47 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
+  width: 80vw;
 }
 
 .tableHeaders {
   border: 1px black solid;
   display: flex;
   flex: 1 1 auto;
-  width: 60vw;
-  align-content: space-between;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: space-around;
+  min-height: 2vh;
 }
 
 .tableFooters {
   border: 1px black solid;
   display: flex;
   flex: 1 1 auto;
-  width: 60vw;
-  align-content: space-between;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.tableBody {
+  width: 100%;
+}
+
+.tableRow {
+  border: 1px black solid;
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.tableRow > * {
+  border: 1px blue solid;
+  flex: 1 1 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tableRow > img {
+  max-width: 80px;
+  max-height: 80px;
 }
 
 .search {
